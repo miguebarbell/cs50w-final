@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: black;
+    font-size: 3rem;
+}
+
+.main-container {
+    padding: 10px;
+    width: 35%;
+    border-radius: 1rem;
+}
+
+.form {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right top, rgba(58,90,255,0.56), #070b1f);
+    min-height: 100vh;
+
+}
+
+.glass {
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    backdrop-filter: blur(100rem);
+    z-index: 5;
+}
+
+.navbar {
+    display: flex;
+    /*justify-content: right;*/
+    /*padding-right: 5%;*/
+    align-content: space-between;
+    background: linear-gradient(to right bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.2));
+    /*background: linear-gradient(to right bottom, rgba(58,90,255,0.56), #070b1f);*/
+    width: 100vw;
+    position: fixed;
+}
+
+.right {
+    justify-content: right;
+    padding-right: 5%;
+}
+
+.left {
+    justify-content: left;
+    padding-left: 5%;
+}
+
+.btn {
+    color: #e2dfe0;
+    border: none;
+}

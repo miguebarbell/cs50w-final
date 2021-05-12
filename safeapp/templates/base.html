@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block style %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% endblock %}
+    <title>{% block title %}SafeApp{% endblock %}</title>
+    {% block script %}
+    {% endblock %}
+
+</head>
+<body>
+{% if user.is_active %}
+<nav class="navbar">
+<div class="left">
+    <button class="btn btn-sm btn-outline-light" id="inbox">Profile</button>
+    <button class="btn btn-sm btn-outline-light" id="inbox">Passwords</button>
+    <button class="btn btn-sm btn-outline-light" id="inbox">Generator</button>
+</div>
+    <div class="right">
+        <a class="btn btn-sm btn-outline-light" href="{% url 'logout' %}">Log Out</a>
+    </div>
+</nav>
+{% endif %}
+<div class="body">
+<div class="main-container form glass">
+    {% block body %}
+    {% endblock %}
+</div>
+</div>
+</body>
+</html>
