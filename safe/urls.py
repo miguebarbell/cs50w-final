@@ -24,5 +24,14 @@ urlpatterns = [
     path("logout", views.logout_view, name="logout"),
     path("register", views.register, name="register"),
 
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('passw', views.home, name='passw'),
+
+    path("gen", views.gen, name='generator'),
+    path("gen/<int:len>/<str:esp>", views.gen, name='generatorfull'),
+    path("gen/<int:len>/", views.gen, name='generatorlen'),
+    path("gen/<str:esp>", views.gen, name='generatoresp'),
+
+    path('edit/<int:id>', views.edit, name='editpass'),
+    path('del/<int:id>', views.delete, name='delete'),
 ]

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     {% endblock %}
     <title>{% block title %}SafeApp{% endblock %}</title>
     {% block script %}
@@ -17,18 +19,19 @@
 <body>
 {% if user.is_active %}
 <nav class="navbar">
-<div class="left">
-    <button class="btn btn-sm btn-outline-light" id="inbox">Profile</button>
-    <button class="btn btn-sm btn-outline-light" id="inbox">Passwords</button>
-    <button class="btn btn-sm btn-outline-light" id="inbox">Generator</button>
-</div>
-    <div class="right">
-        <a class="btn btn-sm btn-outline-light" href="{% url 'logout' %}">Log Out</a>
-    </div>
+<i id="safeApp" class="fas fa-lock fa-2x"></i>
+<ul class="left ul">
+    <li><button class="btn btn-sm btn-outline-light" id="profilebtn" title="Your profile Page">Profile</button></li>
+    <li><a href="{% url 'index' %}"><button class="btn btn-sm btn-outline-light" id="passwordbtn" title="Check you Password Database">Passwords</button></a></li>
+    <li><a href="{% url 'generator' %}"><button class="btn btn-sm btn-outline-light" id="generatorbtn" title="Generate Random Passwords">Generator</button></a></li>
+</ul>
+    <ul class="right ul">
+    <li><a class="btn btn-sm btn-outline-light" href="{% url 'logout' %}" title="Prevent Attacks Login Out">Log Out</a></li>
+    </ul>
 </nav>
 {% endif %}
 <div class="body">
-<div class="main-container form glass">
+<div class="main-container glass">
     {% block body %}
     {% endblock %}
 </div>

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ user }} Generation
+{% endblock %}
+{% block script %}
+{#    <script src="{% static 'index.js' %}"></script>#}
+{% endblock %}
+
+{% block body %}
+    {{ password }}
+    <form method="POST" enctype="multipart/form-data" style="padding: 1em">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <div style="display:flex; justify-content:space-between;">
+            <button class="btn btn-sm btn-outline-primary formbtn" type="submit">Save</button>
+            <button class="btn btn-sm btn-outline-primary formbtn" id="btncancel">Cancel</button>
+        </div>
+
+    </form>
+    <table>
+
+{#    <form method="POST" enctype="multipart/form-data" style="padding: 1em">#}
+{#        {% csrf_token %}#}
+{#        <table>#}
+{#                {{ form.as_table }}#}
+{#        </table>#}
+{#            <div style="display:flex; justify-content:space-between;">#}
+{#                <button class="btn btn-sm btn-outline-primary formbtn" type="submit">Save</button>#}
+{#                <button class="btn btn-sm btn-outline-primary formbtn" id="btncancel">Cancel</button>#}
+{#            </div>#}
+{##}
+{#    </form>#}
+{% endblock %}

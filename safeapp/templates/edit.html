@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ user }} Editting {{ id.title }}
+{% endblock %}
+{% block script %}
+    <script src="{% static 'edit.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+    {{ id.id }}
+    <form method="POST" enctype="multipart/form-data" style="padding: 1em">
+        {% csrf_token %}
+        <table>
+                {{ form.as_table }}
+        </table>
+            <div style="display:flex; justify-content:space-between;">
+                <div>
+                <button class="btn btn-sm btn-outline-primary formbtn" type="submit">Save</button>
+                <a class="btn btn-sm btn-outline-danger formbtn" href="../del/{{ idint }}">Delete</a>
+                </div>
+                <div>
+                <button class="btn btn-sm btn-outline-primary formbtn" id="btncancel">Cancel</button>
+                </div>
+            </div>
+
+    </form>
+{% endblock %}

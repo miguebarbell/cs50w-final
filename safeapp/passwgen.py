@@ -7,6 +7,11 @@ def generate(len=8, esp=False):
     Default is return a string with at least one uppercase, one lowercase and three digits.
     return a string
     """
+    len = int(len)
+    if esp == 'True':
+        esp = True
+    else:
+        esp = False
     lower_letters = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z',
                      'x', 'c', 'v', 'b', 'n', 'm']
     upper_letters = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z',
@@ -14,8 +19,8 @@ def generate(len=8, esp=False):
     numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
     characters = ['_', '-', ',', '.', ';', ':', "'", '!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
     pool = lower_letters + upper_letters + numbers
-    password = str()
-    if esp:
+    # password = str()
+    if esp == True:
         pool += characters
         while True:
             password = ''.join(secrets.choice(pool) for _ in range(len))
@@ -31,5 +36,7 @@ def generate(len=8, esp=False):
                     and any(c.isupper() for c in password)
                     and sum(c.isdigit() for c in password) >= 3):
                 break
+
+    # pool = lower_letters + upper_letters + numbers
 
     return password
