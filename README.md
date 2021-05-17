@@ -14,9 +14,9 @@ It has three main sections:
   Username: weareequals@gmail.com
   Password: (mandatory) Here is the real feature of the app, you can generate a strong password for your account in a real interactive way. so the best way to manage your accounts is having this open while you acre acreating the account.
   Notes: Any special note that you want to put, ie: account valid until 1/1/2023.
-
+  ![pass](safeapp/static/passwords.gif)
 - Profile, Here you can visualize your username, the passwords quantity.
-  Also have the option of export the datbase to textfile so you can store locally or print it.
+  Also have the option of export the database to textfile so you can store locally or print it.
   And you can delete your account, after a confirmation dialog.
   These two options are next to the other, because if you want to emigrate, you do it easily here.
 
