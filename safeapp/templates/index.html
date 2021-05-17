@@ -2,15 +2,12 @@
 {% load static %}
 
 {% block title %}
-{{ user }}
+DataBase {{ user }} - SafeApp
 {% endblock %}
 {% block script %}
+    <script src="{% static 'base.js' %}"></script>
     <script src="{% static 'index.js' %}"></script>
 {% endblock %}
-
-
-
-
 {% block body %}
     <div id="pass">
     </div>

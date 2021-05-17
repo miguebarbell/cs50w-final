@@ -9,7 +9,6 @@
 {% endblock %}
 
 {% block body %}
-    {{ id.id }}
     <form method="POST" enctype="multipart/form-data" style="padding: 1em">
         {% csrf_token %}
         <table>
@@ -21,7 +20,7 @@
                 <a class="btn btn-sm btn-outline-danger formbtn" href="../del/{{ idint }}">Delete</a>
                 </div>
                 <div>
-                <button class="btn btn-sm btn-outline-primary formbtn" id="btncancel">Cancel</button>
+                <button class="btn btn-sm btn-outline-secondary formbtn" id="btncancel">Cancel</button>
                 </div>
             </div>
 

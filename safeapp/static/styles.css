@@ -169,15 +169,37 @@ button {
 
 #id_title,
 #id_username,
-#id_passw {
+#id_password {
     width: 100%;
+    margin: 0.35em;
 }
 
 @media screen and (max-width: 650px){
     #id_title,
     #id_username,
     #id_notes,
-    #id_passw {
+    #id_password{
         max-width: 50vw;
     }
+}
+
+@media screen and (max-width: 650px){
+    #sliderdiv {
+        max-width: 50vw;
+    }
+}
+
+.slider {
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    /*width: 100%;*/
+    /*align-items: center;*/
+}
+
+span {
+    font-size: 0.4em;
+}
+
+li {
+    max-width: 100vw;
 }

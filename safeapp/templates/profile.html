@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Profile of {{ user }} - SafeApp
+{% endblock %}
+{% block script %}
+    <script src="{% static 'base.js' %}"></script>
+    <script src="{% static 'profile.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+    {{ message }}
+    <div class="dropdown">
+    <ul>
+        <li>USER: {{ user }}</li>
+        <li>Passwords: {{ numberofpasswords }}</li>
+    </ul>
+    </div>
+    <br>
+    <a class="btn btn-sm btn-outline-success formbtn" href="../export" title="Export Database">Export DB</a>
+    <a class="btn btn-sm btn-outline-danger formbtn" onclick="deleteProfile()" title="Delete your account">Delete Account</a>
+
+{% endblock %}

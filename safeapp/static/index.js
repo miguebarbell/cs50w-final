@@ -1,35 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
-    load()
+    loadpass()
 })
 
-function load() {
+function loadpass() {
     // load all the content
     fetch('passw')
         .then(response => response.json())
         .then(data => {
             blank_page()
-            // console.log(data)
             let body = document.getElementById('pass')
             document.querySelector('#pass').style.display = 'block'
-
             const work_area = document.createElement('div');
             body.appendChild(work_area)
-            for (pass in data['response']) {
-
-                pdate = date(data['response'][pass]['date'])
-                work_area.innerHTML += `
-                                        <div id="pass${pass}" class="inner-pass dropdown">
-                                        <button title="Display ${data['response'][pass]['title']}" id="btn${pass}" onclick="dropdown(${pass})">Title: ${data['response'][pass]['title']} @ ${pdate} </button>
-                                        <ul id="ul${pass}" style="display:none">
-                                        <li title="Copy Username" onclick="copy('${data['response'][pass]['username']}')">Username: ${data['response'][pass]['username']}</li>
-                                        <li title="Copy Password" onclick="copy('${data['response'][pass]['password']}')">Password: ${data['response'][pass]['password']}</li>
-                                        <li>Note: ${data['response'][pass]['note']}</li>
-                                        <li><a href="edit/${pass}">Edit?</a></li>
-                                        </ul>
-                                        
-                                        <div>
-                                        `
-            }
+            if (data['length'] === 0) {
+                work_area.innerHTML = `<span style="padding: 1rem">Begin in <a href="gen" class="btn btn-sm btn-outline-primary formbtn">Generator</a> Section</spans>`
+            } else {
+                for (pass in data['response']) {
+                    pdate = date(data['response'][pass]['date'])
+                    work_area.innerHTML += `
+                                            <div id="pass${pass}" class="inner-pass dropdown">
+                                            <button title="Display ${data['response'][pass]['title']}" id="btn${pass}" onclick="dropdown(${pass})">Title: ${data['response'][pass]['title']} @ ${pdate} </button>
+                                            <ul id="ul${pass}" style="display:none">
+                                            <li title="Copy Username" onclick="copy('${data['response'][pass]['username']}')">Username: ${data['response'][pass]['username']}</li>
+                                            <li title="Copy Password" onclick="copy('${data['response'][pass]['password']}')">Password: ${data['response'][pass]['password']}</li>
+                                            <li>Note: ${data['response'][pass]['note']}</li>
+    <!--                                        <li><a href="edit/${pass}">Edit?</a></li>-->
+                                            <li style="justify-content: center"><a class="btn btn-sm btn-outline-warning formbtn" href="edit/${pass}">Edit</a></li>
+                                            </ul>
+                                            
+                                            <div>
+                                            `
+                    }}
         })
 }
 
@@ -49,17 +50,6 @@ function dropdown(id){
 
 }
 
-function new_pass() {
-
-}
-
-function edit_pass() {
-
-}
-
-function profile() {
-
-}
 
 function blank_page() {
     let blank_body = document.querySelector('.main-container').children;

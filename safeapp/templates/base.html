@@ -20,10 +20,11 @@
 {% if user.is_active %}
 <nav class="navbar">
 <i id="safeApp" class="fas fa-lock fa-2x"></i>
+{#    <img src="../static/icon.png">#}
 <ul class="left ul">
-    <li><button class="btn btn-sm btn-outline-light" id="profilebtn" title="Your profile Page">Profile</button></li>
-    <li><a href="{% url 'index' %}"><button class="btn btn-sm btn-outline-light" id="passwordbtn" title="Check you Password Database">Passwords</button></a></li>
-    <li><a href="{% url 'generator' %}"><button class="btn btn-sm btn-outline-light" id="generatorbtn" title="Generate Random Passwords">Generator</button></a></li>
+    <li><a href="{% url 'profile' %}"><button class="btn btn-sm btn-outline-light btnav" id="profilebtn" title="Your profile Page">Profile</button></a></li>
+    <li><a href="{% url 'index' %}"><button class="btn btn-sm btn-outline-light btnav" id="passwordbtn" title="Check you Password Database">Passwords</button></a></li>
+    <li><a href="{% url 'generator' %}"><button class="btn btn-sm btn-outline-light btnav" id="generatorbtn" title="Generate Random Passwords">Generator</button></a></li>
 </ul>
     <ul class="right ul">
     <li><a class="btn btn-sm btn-outline-light" href="{% url 'logout' %}" title="Prevent Attacks Login Out">Log Out</a></li>

@@ -14,4 +14,4 @@ class Password(models.Model):
     notes = models.TextField(max_length=4000, blank=True)
     date = models.DateTimeField(auto_now_add=True)
     def __str__(self):
-        return f'{self.title} by {self.user}'
+        return f"{self.date.strftime('%X %x')} {self.title} by {self.user}"

@@ -34,7 +34,7 @@ def generate(len=8, esp=False):
             password = ''.join(secrets.choice(pool) for _ in range(len))
             if (any(c.islower() for c in password)
                     and any(c.isupper() for c in password)
-                    and sum(c.isdigit() for c in password) >= 3):
+                    and sum(c.isdigit() for c in password) >= 2):
                 break
 
     # pool = lower_letters + upper_letters + numbers

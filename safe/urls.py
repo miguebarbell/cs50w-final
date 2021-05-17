@@ -27,6 +27,8 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('passw', views.home, name='passw'),
 
+
+    path("genapi/<int:len>/<str:esp>", views.genapi, name='apigenerator'),
     path("gen", views.gen, name='generator'),
     path("gen/<int:len>/<str:esp>", views.gen, name='generatorfull'),
     path("gen/<int:len>/", views.gen, name='generatorlen'),
@@ -34,4 +36,9 @@ urlpatterns = [
 
     path('edit/<int:id>', views.edit, name='editpass'),
     path('del/<int:id>', views.delete, name='delete'),
+
+    path('profile', views.profile, name='profile'),
+    path('delete', views.delete_profile, name="delete_profile"),
+    path('export', views.export_db, name='export')
+
 ]
