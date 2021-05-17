@@ -25,4 +25,3 @@ You use the Application by creating an user, then go and start generating entrie
 This project its difficult than the others, because use a own created python generator in the backend, that work in real
 with the front end. making the project more reactive when the user make an input. Also the most of the site is CSS reactive.
 
-[comment]: <> (cualquier otra informacion)
