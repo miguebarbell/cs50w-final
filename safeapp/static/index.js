@@ -21,8 +21,9 @@ function loadpass() {
                                             <div id="pass${pass}" class="inner-pass dropdown">
                                             <button title="Display ${data['response'][pass]['title']}" id="btn${pass}" onclick="dropdown(${pass})">Title: ${data['response'][pass]['title']} @ ${pdate} </button>
                                             <ul id="ul${pass}" style="display:none">
-                                            <li title="Copy Username" onclick="copy('${data['response'][pass]['username']}')">Username: ${data['response'][pass]['username']}</li>
-                                            <li title="Copy Password" onclick="copy('${data['response'][pass]['password']}')">Password: ${data['response'][pass]['password']}</li>
+                                            <li title="Click: Copy Username" onclick="copy('${data['response'][pass]['username']}')">Username: ${data['response'][pass]['username']}</li>
+<!--                                            <li title="Copy Password" onclick="copy('${data['response'][pass]['password']}')" style="-webkit-text-security: circle">Password: ${data['response'][pass]['password']}</li>-->
+                                            <li title="Click: Copy Password. \n If you want to display it go to Edit" onclick="copy('${data['response'][pass]['password']}')">Password: &#9679&#9679&#9679&#9679&#9679&#9679</li>
                                             <li>Note: ${data['response'][pass]['note']}</li>
     <!--                                        <li><a href="edit/${pass}">Edit?</a></li>-->
                                             <li style="justify-content: center"><a class="btn btn-sm btn-outline-warning formbtn" href="edit/${pass}">Edit</a></li>
