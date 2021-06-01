@@ -30,9 +30,9 @@ urlpatterns = [
 
     path("genapi/<int:len>/<str:esp>", views.genapi, name='apigenerator'),
     path("gen", views.gen, name='generator'),
-    path("gen/<int:len>/<str:esp>", views.gen, name='generatorfull'),
-    path("gen/<int:len>/", views.gen, name='generatorlen'),
-    path("gen/<str:esp>", views.gen, name='generatoresp'),
+    # path("genapi/<int:len>/<str:esp>", views.genapi, name='generatorfull'),
+    # path("genapi/<int:len>/", views.genapi, name='generatorlen'),
+    # path("genapi/<str:esp>", views.genapi, name='generatoresp'),
 
     path('edit/<int:id>', views.edit, name='editpass'),
     path('del/<int:id>', views.delete, name='delete'),

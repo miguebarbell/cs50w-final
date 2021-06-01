@@ -8,6 +8,7 @@ function loadpass() {
         .then(response => response.json())
         .then(data => {
             blank_page()
+            console.log(data)
             let body = document.getElementById('pass')
             document.querySelector('#pass').style.display = 'block'
             const work_area = document.createElement('div');
@@ -15,7 +16,9 @@ function loadpass() {
             if (data['length'] === 0) {
                 work_area.innerHTML = `<span style="padding: 1rem">Begin in <a href="gen" class="btn btn-sm btn-outline-primary formbtn">Generator</a> Section</spans>`
             } else {
+                // for (i = data['response'].length(); i == 0; i--){
                 for (pass in data['response']) {
+                    console.log(data['response'])
                     pdate = date(data['response'][pass]['date'])
                     work_area.innerHTML += `
                                             <div id="pass${pass}" class="inner-pass dropdown">
