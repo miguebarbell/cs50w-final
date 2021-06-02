@@ -28,7 +28,7 @@ You can run this in your personal computer and store the passwords locally, with
 
 
 ##How every section works and the files inside of it.
-- ####NAVBAR:
+- ####NavBar:
   ![navbar](safeapp/static/navbar.gif)
   
   `This is the Upper navigation bar, its sticked for all the other sections, allowing navigate to each section from any section.
@@ -38,9 +38,10 @@ You can run this in your personal computer and store the passwords locally, with
   - base.js
   - styles.css
 
-- ####login/register
+- ####Login / Register
   ![login](safeapp/static/login.png)
   ![register](safeapp/static/register.png)
+  
   `It has the standard autentication from django, in two differents/separate pages.`
   - login.html
   - register.html
@@ -56,7 +57,7 @@ You can run this in your personal computer and store the passwords locally, with
   - index.html
   - index.js
   
-- ####Generate/Save passwords
+- ####Generate / Save passwords
   ![staticgenerator](safeapp/static/generator.png)
   ![passgenerator](safeapp/static/passgenerator.gif)
   
